@@ -66,10 +66,13 @@ frontend/
 │   ├── vite-env.d.ts            # Vite 类型声明
 │   └── ...
 ├── .gitignore
+├── .env.example                 # 环境变量示例
 ├── package.json                 # npm 依赖配置
 ├── tsconfig.json                # TypeScript 配置
 ├── vite.config.ts               # Vite 配置
-├── start.sh                     # 启动脚本
+├── vercel.json                  # Vercel 部署配置
+├── start.sh                     # 启动脚本 (macOS/Linux)
+├── start.bat                    # 启动脚本 (Windows)
 └── README.md                    # 本文档
 ```
 
@@ -79,6 +82,8 @@ frontend/
 
 - Node.js 20.19+ 或 22.12+
 - npm 9+ 或 yarn 1.22+
+
+> 💡 **支持平台**: macOS、Linux、Windows
 
 ### 安装依赖
 
@@ -91,14 +96,23 @@ npm install
 
 #### 使用启动脚本（推荐）
 
+**macOS / Linux**
+
 ```bash
+chmod +x start.sh  # 首次运行需要
 ./start.sh
 ```
 
+**Windows**
+
+```cmd
+start.bat
+```
+
 脚本会自动：
-1. 检查并安装依赖
-2. 启动开发服务器
-3. 自动打开浏览器
+1. 检查 Node.js 是否安装
+2. 检查并安装依赖
+3. 启动开发服务器
 
 #### 手动启动
 

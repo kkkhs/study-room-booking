@@ -86,8 +86,12 @@ backend/
 │   │       └── DataInitializer.java     # 示例数据初始化
 │   └── resources/
 │       └── application.yml              # 应用配置
-├── build.sh                             # 构建脚本
-├── run.sh                               # 运行脚本
+├── build.sh                             # 构建脚本 (macOS/Linux)
+├── build.bat                            # 构建脚本 (Windows)
+├── run.sh                               # 运行脚本 (macOS/Linux)
+├── run.bat                              # 运行脚本 (Windows)
+├── Dockerfile                           # Docker容器配置
+├── .dockerignore                        # Docker忽略文件
 ├── pom.xml                              # Maven配置
 └── data/                                # H2数据库文件（运行时生成）
     └── studyroom.mv.db
@@ -100,30 +104,49 @@ backend/
 - Java 17+
 - Maven 3.9+
 
+> 💡 **支持平台**: macOS、Linux、Windows
+
 ### 构建项目
+
+#### macOS / Linux
 
 ```bash
 cd backend
+chmod +x build.sh  # 首次运行需要
 ./build.sh
 ```
 
+#### Windows
+
+```cmd
+cd backend
+build.bat
+```
+
 构建脚本会执行：
-1. 清理旧的构建文件
-2. 编译项目
-3. 运行测试（可跳过）
+1. 检查 Java 和 Maven 是否安装
+2. 清理旧的构建文件
+3. 编译项目
 4. 打包为可执行JAR
 
 ### 启动服务
 
+#### macOS / Linux
+
 ```bash
 ./run.sh
+```
+
+#### Windows
+
+```cmd
+run.bat
 ```
 
 启动脚本会：
 1. 检查 Java 版本
 2. 启动 Spring Boot 应用
 3. 初始化示例数据
-4. 日志输出到 `backend.log`
 
 服务启动后访问：http://localhost:8080
 

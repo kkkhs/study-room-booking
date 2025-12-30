@@ -76,11 +76,6 @@ export default function Login() {
           登录
         </Button>
       </Form.Item>
-
-      <div style={{ textAlign: 'center', color: '#999' }}>
-        <p>测试账号：admin / admin123 (管理员)</p>
-        <p>user1 / password123 (普通用户)</p>
-      </div>
     </Form>
   );
 
