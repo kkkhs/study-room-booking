@@ -1,0 +1,48 @@
+.classroom-status-container {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.status-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.filter-section {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-item label {
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .classroom-status-container {
+    padding: 16px;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .filter-item {
+    width: 100%;
+  }
+
+  .filter-item label {
+    width: 100px;
+  }
+}

@@ -1,0 +1,35 @@
+.booking-container {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.search-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.seat-card {
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid #f0f0f0;
+}
+
+.seat-card:hover {
+  border-color: #1890ff;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+}
+
+.seat-number {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1890ff;
+  margin-bottom: 12px;
+}
+
+.seat-info {
+  font-size: 14px;
+  color: #666;
+}
+
+.seat-info > div {
+  margin-bottom: 4px;
+}

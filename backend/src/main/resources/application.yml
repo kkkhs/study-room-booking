@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: study-room-booking
+
+  # H2数据库配置（文件模式）
+  datasource:
+    url: jdbc:h2:file:./data/studyroom
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+    
+  # JPA配置
+  jpa:
+    hibernate:
+      ddl-auto: update  # 自动创建/更新表结构
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+        
+  # H2 Web控制台
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+
+# 服务器配置
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# 应用业务配置
+app:
+  booking:
+    # 预约后多久未签到视为超时（分钟）
+    timeout-minutes: 15
+    # 单次预约最长时间（小时）
+    max-duration-hours: 4
+    # 提前预约天数
+    advance-days: 7
+    
+# 日志配置
+logging:
+  level:
+    com.hfut.studyroom: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
