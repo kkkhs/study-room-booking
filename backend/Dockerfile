@@ -32,6 +32,9 @@ COPY --from=build /app/target/*.jar app.jar
 # 更改所有者
 RUN chown spring:spring app.jar
 
+# 创建数据目录并设置权限（用于H2数据库）
+RUN mkdir -p data && chown spring:spring data
+
 # 切换到非 root 用户
 USER spring:spring
 

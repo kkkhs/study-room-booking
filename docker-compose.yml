@@ -1,0 +1,20 @@
+services:
+  backend:
+    build: ./backend
+    container_name: study-room-backend
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./backend-data:/app/data # 持久化 H2 数据库数据到宿主机
+    environment:
+      - JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: study-room-frontend
+    ports:
+      - '3000:80' # 将容器的 80 端口映射到宿主机的 3000 端口
+    depends_on:
+      - backend
+    restart: always
